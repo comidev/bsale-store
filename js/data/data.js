@@ -1,4 +1,4 @@
-const ENDPOINT = "http://localhost:8080";
+const ENDPOINT = "https://api-rest-bsale-store.herokuapp.com";
 const ENDPOINT_PRODUCTS = `${ENDPOINT}/products`;
 const LIMIT = 10;
 const BY = {
