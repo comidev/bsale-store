@@ -1,7 +1,43 @@
 .resultados {
+    position: relative;
     font-size: 1.2rem;
     color: var(--color-black3);
 }
+
+/* --- PAGINACION ----- */
+
+.paginacion {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: max-content;
+    margin: 0 auto;
+}
+
+.paginacion li {
+    margin-left: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+.paginacion_btn {
+    background-color: #57f;
+    color: #fff;
+    border-radius: 0.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.paginacion_btn:hover {
+    background-color: #000;
+}
+
+.paginacion_btn-active {
+    background-color: #000;
+}
+
+/*  --------PRODUCTS ------- */
 
 .productos {
     padding-top: 1.5rem;
@@ -173,34 +209,7 @@
     }
 }
 
-/* --- PAGINACION ----- */
-
-.paginacion {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: max-content;
-    margin: 2rem auto;
-}
-
-.paginacion li {
-    margin-left: 0.3rem;
-    margin-bottom: 0.3rem;
-}
-.paginacion_btn {
-    background-color: #57f;
-    color: #fff;
-    border-radius: 0.2rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.paginacion_btn:hover {
-    background-color: #000;
-}
-
-.paginacion_btn-active {
-    background-color: #000;
-}
+/* NOT FOUND */
 
 .not_found_container {
     display: flex;
