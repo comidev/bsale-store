@@ -1,0 +1,19 @@
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-gris);
+    margin-top: auto;
+}
+
+.logo-footer {
+    margin: 2rem auto;
+}
+
+.firma {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 13px;
+    height: 6rem;
+}

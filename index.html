@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bsale - Store</title>
+        <link rel="stylesheet" href="css/normalize/normalize.css" />
+        <link rel="stylesheet" href="css/styles/style.css" />
+        <link rel="stylesheet" href="css/styles/navbar.css" />
+        <link rel="stylesheet" href="css/styles/footer.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <script defer src="js/data/data.js"></script>
+        <script defer src="js/components/Products.js"></script>
+        <script defer src="js/components/Categories.js"></script>
+        <script defer src="js/components/Price.js"></script>
+        <script defer src="js/components/Discount.js"></script>
+        <script defer src="js/components/Shopping.js"></script>
+        <script defer src="js/components/PaginaButton.js"></script>
+        <script defer src="js/scripts/index.js"></script>
+        <link
+            rel="apple-touch-icon"
+            sizes="57x57"
+            href="./assets/favicon/apple-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="./assets/favicon/apple-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="./assets/favicon/apple-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="./assets/favicon/apple-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="./assets/favicon/apple-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="./assets/favicon/apple-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="./assets/favicon/apple-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="./assets/favicon/apple-icon-152x152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-icon-180x180.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="./assets/favicon/android-icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="./assets/favicon/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta
+            name="msapplication-TileImage"
+            content="./assets/favicon/ms-icon-144x144.png"
+        />
+        <meta name="theme-color" content="#ffffff" />
+    </head>
+    <body>
+        <header class="nav__container">
+            <nav class="u-center nav">
+                <header class="nav__header">
+                    <div class="logo">
+                        <a href="">
+                            <img src="./assets/logo.webp" alt="Logo" />
+                        </a>
+                    </div>
+                    <form class="form__search">
+                        <input
+                            class="form__search_input"
+                            type="search"
+                            placeholder="Buscar..."
+                        />
+                        <button class="form__search_submit">Buscar</button>
+                    </form>
+                    <button class="btn btn-green btn-car">Carro</button>
+                    <table class="tabla">
+                        <thead>
+                            <tr>
+                                <th class="tabla_nombre">Nombre</th>
+                                <th class="tabla_precio">Precio</th>
+                                <th class="tabla_cantidad">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tabla_cuerpo"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="tabla_nombre">Total</td>
+                                <td id="precio_total" class="tabla_precio">$ 0</td>
+                                <td class="tabla_cantidad">
+                                    <a
+                                        href="https://api.whatsapp.com/send?phone=51960949984&text=Buen día. He revisado su página BsaleStore: "
+                                        target="_blank"
+                                        id="comprar"
+                                        class="btn btn-comprar"
+                                        >Comprar</a
+                                    >
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </header>
+                <ul class="list_filters">
+                    <li>
+                        <button class="btn_sin_filter">Sin filtros</button>
+                    </li>
+                    <li>
+                        <button class="btn_filter">Categorias</button>
+                        <div class="list_filter">
+                            <button class="btn_close">✖</button>
+                            <ul id="categories">
+                                <li>
+                                    <button class="btn_filter_item" value="xd">
+                                        Item
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn_filter">Precios</button>
+                        <div class="list_filter">
+                            <button class="btn_close">✖</button>
+                            <ul id="precios">
+                                <li>
+                                    <button class="btn_filter_item">0 - 500</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn_filter">Descuentos</button>
+                        <div class="list_filter">
+                            <button class="btn_close">✖</button>
+                            <ul id="descuentos">
+                                <li>
+                                    <button class="btn_filter_item">0 - 10</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn_filter">Ordenar por</button>
+                        <div class="list_filter">
+                            <button class="btn_close">✖</button>
+                            <ul id="ordenar_por">
+                                <li>
+                                    <button class="btn_filter_item">
+                                        Nombre: A - Z
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn_filter_item">
+                                        Nombre: Z - A
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn_filter_item">
+                                        Precio: menor a mayor
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn_filter_item">
+                                        Precio: mayor a menor
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn_filter_item">
+                                        Descuento: menor a mayor
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn_filter_item">
+                                        Descuento: mayor a menor
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <button class="btn btn-car btn-filtros">Filtros</button>
+            </nav>
+        </header>
+        <main>
+            <section class="u-center resultados">
+                <p id="cantidad"></p>
+            </section>
+            <section class="productos u-center">
+                <!-- <article class="producto">
+                    <div class="desc">-20%</div>
+                    <img
+                        class="producto__img"
+                        src="assets/img01.jpg"
+                        alt="Producto"
+                    />
+                    <p class="producto__name">Nombre de Producto</p>
+                    <div class="producto__precio_container">
+                        <span class="precio_title">Regular</span>
+                        <span class="tachado">$ 120,120.75</span>
+                    </div>
+                    <div class="producto__precio_container">
+                        <span class="precio_title">Oferta</span>
+                        <span class="oferta">$ 100,120.75</span>
+                    </div>
+                    <form class="producto__form">
+                        <input type="number" disabled value="0" max="99" min="0" />
+                        <div class="producto__form_buttons">
+                            <button class="btn-contador" type="button">+</button>
+                            <button class="btn-contador btn-inferior" type="button">
+                                -
+                            </button>
+                        </div>
+                        <button class="producto__form_submit" type="submit">
+                            Agregar
+                        </button>
+                    </form>
+                </article> -->
+                <!-- JAVA SCRIPT -->
+            </section>
+            <section>
+                <ul class="paginacion"></ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="u-center">
+                <div class="logo logo-footer">
+                    <a href="#">
+                        <img src="./assets/logo.webp" alt="Logo" />
+                    </a>
+                </div>
+                <p class="firma">
+                    &copy; Página diseñada y construida por Omar Miranda
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
