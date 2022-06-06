@@ -4,27 +4,14 @@
 
 :root {
     --color-white: #fff;
-    --color-white2: #f9f9f9;
-    --color-white3: #eaeaea;
     --color-black: #000;
     --color-black2: #111;
     --color-black3: #666;
-
-    --color-primary: #ff6d33;
-    --color-primary-bg: #ff6d3333;
-
-    --color-azul: #09f;
     --color-gris: #888;
+    --color-primary: #ff6d33;
     --color-gold: #efb810;
-    --color-celeste: #00fdf8;
-    --color-spring: #6db33f;
     --color-react: #61dafb;
-    --color-rojo: #ff0080;
-    --color-naranja: #ff4f4f;
-
-    --color-error: #f33;
-    --color-warning: #fc7a1e;
-    --color-success: #6db33f;
+    --color-spring: #6db33f;
 
     --container-width-lg: 1540px; /* grandes */
     --container-width-md: 1140px; /* medianos */
@@ -42,8 +29,8 @@ body {
     font-family: "Inter", sans-serif;
     overflow-x: hidden;
     word-wrap: break-word;
-    background-color: var(--bg-color1);
-    color: var(--color);
+    background-color: var(--color-white);
+    color: var(--color-black);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -53,35 +40,6 @@ body {
 main {
     padding-top: 10rem;
     padding-bottom: 4rem;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    text-align: center;
-    margin: 0;
-}
-
-h1 {
-    font-size: calc(1.25vw + 1.25vh + 1.8rem);
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-}
-h2 {
-    font-size: calc(1vw + 1vh + 1.3rem);
-    font-weight: 700;
-    margin-bottom: 1.3rem;
-}
-h3 {
-    font-size: calc(0.8vw + 0.8vh + 1.1rem);
-    font-weight: 600;
-    margin-bottom: 1.1rem;
-}
-h4 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 0.8rem;
 }
 
 p {
@@ -100,18 +58,6 @@ a {
     transition: color ease 0.3s;
 }
 
-.start {
-    text-align: start;
-}
-
-.end {
-    text-align: end;
-}
-
-.center {
-    text-align: center;
-}
-
 .btn {
     display: inline-block;
     width: max-content;
@@ -119,11 +65,6 @@ a {
     cursor: pointer;
     font-weight: 600;
     border-radius: 0.4rem;
-
-    border: 1px solid var(--color1);
-    background-color: var(--color1);
-    color: var(--bg-color1);
-
     transition-property: background-color, border, color;
     transition: 300ms ease;
 }

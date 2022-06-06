@@ -79,6 +79,7 @@ const getTotal = () => {
 const initPagina = (totalPages, totalItems, apiFunction) => {
     cantidadHTML.innerHTML = `Resultados: ${totalItems}`;
     paginacionHTML.innerHTML = PaginaButtons(totalPages);
+
     const paginaBtns = document.querySelectorAll(".paginacion_btn");
     paginaBtns[pageNumberClient].classList.add("paginacion_btn-active");
     paginaBtns.forEach((paginaBtn, index) => {
@@ -124,12 +125,15 @@ const showProductResults = (items) => {
             const cantidad = Number(inputsContador[index].value);
             if (productFind) {
                 if (cantidad > 0) {
+                    // ACTUALIZA PRODUCTO --------------------------------
                     productFind.cantidad = cantidad;
                 } else {
+                    // ELIMINA PRODUCTO ----------------------------------
                     const indexRemove = listShopping.indexOf(productFind);
                     listShopping.splice(indexRemove, 1);
                 }
             } else if (cantidad > 0) {
+                // AGREGA PRODUCTO --------------------------------------
                 const product = items.find((item) => item.id == id);
                 listShopping.push({
                     id,
@@ -144,6 +148,7 @@ const showProductResults = (items) => {
     });
 };
 
+// DEFAULT ---------------------------------------------------------------------
 loadingPage();
 getProducts(pageNumberClient).then((res) => {
     const { items, totalPages, totalItems } = res;
@@ -155,6 +160,7 @@ getProducts(pageNumberClient).then((res) => {
     showProductResults(items);
 });
 
+// SIN FILTROS -----------------------------------------------------------------
 const btnSinFiltros = document.querySelector(".btn_sin_filter");
 btnSinFiltros.addEventListener("click", () => {
     loadingPage();
@@ -169,7 +175,7 @@ btnSinFiltros.addEventListener("click", () => {
     });
 });
 
-// Poblamos los filtros
+// Poblamos los categorías -------------------------------------------------------
 const categoriesHTML = document.getElementById("categories");
 categoriesHTML.innerHTML = `<div class="spinner" />`;
 getCategories().then((res) => {
@@ -197,12 +203,12 @@ getCategories().then((res) => {
     });
 });
 
-// Poblamos los precios
+// Poblamos los precios ------------------------------------------------------------
 const preciosHTML = document.getElementById("precios");
 preciosHTML.innerHTML = `<div class="spinner" />`;
 getPrecioMayor().then((res) => {
     preciosHTML.innerHTML = Prices(res);
-    // AGREGAMOS EVENTOS
+    // AGREGAMOS EVENTOS --------------------------------
     const buttonsPrice = document.querySelectorAll("#precios .btn_filter_item");
     buttonsPrice.forEach((btnPrice) => {
         btnPrice.addEventListener("click", () => {
@@ -225,12 +231,12 @@ getPrecioMayor().then((res) => {
     });
 });
 
-// Poblamos los descuentos
+// Poblamos los descuentos -------------------------------------------------------
 const descuentosHTML = document.getElementById("descuentos");
 descuentosHTML.innerHTML = `<div class="spinner" />`;
 getDescuentoMayor().then((res) => {
     descuentosHTML.innerHTML = Discounts(res);
-    // AGREGAMOS EVENTOS
+    // AGREGAMOS EVENTOS --------------------------------
     const buttonsDiscount = document.querySelectorAll(
         "#descuentos .btn_filter_item"
     );
@@ -259,7 +265,7 @@ getDescuentoMayor().then((res) => {
     });
 });
 
-// AGREGAMOS EVENTOS A ORDENAR POR
+// AGREGAMOS EVENTOS A ORDENAR POR ----------------------------------------------
 const buttonsSortBy = document.querySelectorAll("#ordenar_por .btn_filter_item");
 buttonsSortBy.forEach((btnSortBy, index) => {
     btnSortBy.addEventListener("click", () => {
@@ -280,7 +286,7 @@ buttonsSortBy.forEach((btnSortBy, index) => {
     });
 });
 
-// BUSCADOR
+// BUSCADOR -----------------------------------------------------------------
 const btnSearch = document.querySelector(".form__search");
 const inputSearch = document.querySelector(".form__search_input");
 btnSearch.addEventListener("submit", (e) => {
